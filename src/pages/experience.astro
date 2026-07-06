@@ -1,0 +1,579 @@
+---
+// src/pages/experience.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Experience | Ean Cummings">
+  <main class="experience-page animate-fade-in">
+    
+    <!-- ==================== 1. PAGE HEADER ==================== -->
+    <header class="page-header">
+      <div class="header-text">
+        <span class="section-tag-badge">Career Timeline</span>
+        <h1 class="page-title">Experience</h1>
+        <p class="subtitle">Bridging rigorous hardware engineering with high-level team leadership.</p>
+      </div>
+      <a href="/Ean_Cummings_Engineering_Resume.pdf" target="_blank" class="btn-resume-download">
+        Download Résumé (PDF)
+        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+      </a>
+    </header>
+
+    <!-- ==================== 2. TIMELINE SECTIONS ==================== -->
+    
+    <!-- Track A: Advanced Research & Laboratories -->
+    <section class="exp-track-row">
+      <div class="track-sidebar">
+        <span class="track-num">01 / Ecosystems</span>
+        <h2>Advanced Research & Laboratory Work</h2>
+      </div>
+      
+      <div class="track-content-flow">
+        
+        <!-- Microfabrication Block -->
+        <div class="experience-card">
+          <div class="card-meta">
+            <span class="card-date">Jan 2026 – May 2026</span>
+            <h3>Microfabrication Engineer</h3>
+            <span class="card-org">University of Iowa MATFAB Laboratory</span>
+          </div>
+          
+          <div class="card-content-split">
+            <div class="card-text-column">
+              <p>
+                <strong>Lithography & Etching:</strong> Engineered precise 1–2 µm undercut profiles using sacrificial LOR 5B and AZ1518 imaging bilayer resist matrices. Executed anisotropic KOH wet chemical etching on silicon substrates.
+              </p>
+              <p>
+                <strong>Thin-Film Sputtering:</strong> Deposited continuous 50nm SiO₂ dielectric thin films inside an Intlvac Nanochrome Sputterer via reactive RF magnetron sputtering, managing process cooldown constraints to safeguard resist structures against thermal degradation.
+              </p>
+              <p>
+                <strong>Validation Metrology:</strong> Characterized etched trench topologies and sidewall crystal plane geometries utilizing high-resolution Scanning Electron Microscopy (SEM), spectroscopic ellipsometry (VASE) Cauchy modeling, and optical profilometry.
+              </p>
+            </div>
+            <div class="card-image-column">
+              <div class="image-wrapper">
+                <img src="/images/microfab.png" alt="Microfabrication Process View" class="exp-photo" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LiDAR Block -->
+        <div class="experience-card">
+          <div class="card-meta">
+            <span class="card-date">Jan 2026 – May 2026</span>
+            <h3>Graduate Systems Engineer</h3>
+            <span class="card-org">LIDAR Systems (NASA Sponsored)</span>
+          </div>
+          
+          <div class="card-content-split">
+            <div class="card-text-column">
+              <p>
+                <strong>LiDAR System Simulation:</strong> Characterized laser beam divergence, front/back-surface Fresnel reflections, and detector-lens assembly angular fields of view (FOV) to calibrate atmospheric payload optics.
+              </p>
+              <p>
+                <strong>Signal Processing:</strong> Extracted diffusion and junction capacitance variables from photodiode transients at 850nm and 940nm using MATLAB, tuning transimpedance amplifier (TIA) feedback loops to eliminate capacitance-induced tracking oscillations.
+              </p>
+            </div>
+            <div class="card-image-column">
+              <div class="image-wrapper">
+                <img src="/images/Lidar.png" alt="Optical Signal Analysis" class="exp-photo" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Biomedical Labs Block -->
+        <div class="experience-card">
+          <div class="card-meta">
+            <span class="card-date">Fall 2023</span>
+            <h3>Biomedical Engineering Lab Rotations</h3>
+            <span class="card-org">Roy J. Carver Department of Biomedical Engineering</span>
+          </div>
+          <div class="card-content-split">
+            <div class="card-text-column">
+              <p>
+                <strong>Structural Biomechanics:</strong> Characterized the mechanical properties and elastic moduli of diverse material domains using an MTS machine for three-point bending tests, mapping stress-vs-deflection curves using classical moment of inertia equations.
+              </p>
+              <p>
+                <strong>Cardiovascular Viscosity:</strong> Investigated non-Newtonian, shear-thinning fluid dynamics to design a synthetic blood-analogue; operated a Wells-Brookfield cone-and-plate viscometer at controlled temperatures to isolate a perfect 3.5 cP formulation using a 28.25% glycerin-to-water matrix].
+              </p>
+              <p>
+                <strong>Cellular & Molecular Assays:</strong> Applied sterile hood techniques to culture CHO cell lines, isolated protein concentrations via Bradford assays and UV-Vis spectrophotometry, mapped molecular weights using SDS-PAGE, and extracted genomic DNA for Hind III / BamH1 restriction digests.
+              </p>
+            </div>
+            <div class="card-image-column">
+              <div class="image-wrapper">
+                <!-- Drop your three-point bending chart or gel photo here later -->
+                <img src="/images/biomed.png" alt="Biomedical Engineering Laboratory Data Chart" class="exp-photo" />
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+    </section>
+
+    <!-- Track B: Leadership & Public Impact -->
+    <section class="exp-track-row">
+      <div class="track-sidebar">
+        <span class="track-num">02 / Administration</span>
+        <h2>Leadership & Public Impact</h2>
+      </div>
+      
+      <div class="track-content-flow">
+        
+        <!-- College of Engineering Ambassador Block -->
+        <div class="experience-card">
+          <div class="card-meta">
+            <span class="card-date">2023 – 2025</span>
+            <h3>Lead Student Ambassador</h3>
+            <span class="card-org">University of Iowa College of Engineering</span>
+          </div>
+          <div class="card-content-split">
+            <div class="card-text-column">
+              <p>
+                <strong>Team Operations:</strong> Promoted to Lead Ambassador in 2024, tasked with training, organizing, and managing an active 18-person undergraduate student ambassador corps.
+              </p>
+              <p>
+                <strong>Event Organization:</strong> Directed large-scale campus recruitment corridors, including "Engineering Day," facilitating visits and academic panels for hundreds of prospective high school families to showcase the Iowa engineering experience.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center for Advancement Block -->
+        <div class="experience-card">
+          <div class="card-meta">
+            <span class="card-date">2022 – 2023</span>
+            <h3>Student Ambassador</h3>
+            <span class="card-org">University of Iowa Center for Advancement</span>
+          </div>
+          <div class="card-content-split">
+            <div class="card-text-column">
+              <p>
+                <strong>Advancement & Advocacy:</strong> Engaged actively with alumni and university donors to highlight the high-level technical activities and research achievements of the undergraduate student body.
+              </p>
+              <p>
+                <strong>Executive Hosting:</strong> Collaborated closely with university administration to organize and execute high-profile institutional events, including hosting initiatives for the President of the University of Iowa.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Triathlon Block -->
+        <div class="experience-card">
+          <div class="card-meta">
+            <span class="card-date">2023 – 2025</span>
+            <h3>Club President & Vice President</h3>
+            <span class="card-org">University of Iowa Triathlon Club</span>
+          </div>
+          <div class="card-content-split">
+            <div class="card-text-column">
+              <p>
+                <strong>Institutional Direction:</strong> Manage executive operating budgets, secure corporate sponsorships, organize multi-state national event travel logistics, and schedule training pipelines for a highly competitive athletic program.
+              </p>
+              <p>
+                <strong>Event Logistics:</strong> Organized and hosted Triowa, the University of Iowa's signature indoor triathlon race event, while actively competing at the USAT Collegiate Club National Championships.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Track C: Coursework Matrix Search -->
+    <section class="exp-track-row border-top-only">
+      <div class="track-sidebar">
+        <span class="track-num">03 / Curriculum</span>
+        <h2>Advanced Graduate Coursework</h2>
+        <p class="sidebar-context">A multidisciplinary foundation spanning physical hardware, power infrastructure, and algorithmic logic.</p>
+      </div>
+      
+      <div class="track-content-flow">
+        
+        <!-- Apple-Style Interactive Course "Word Cloud" -->
+        <div class="course-cloud" id="courseCloud">
+          <span class="cloud-tag">Medical Imaging Physics</span>
+          <span class="cloud-tag">Graph Algorithms & Optimization</span>
+          <span class="cloud-tag">Machine Learning</span>
+          <span class="cloud-tag">Digital Image Processing</span>
+          <span class="cloud-tag">Biomedical Signal Processing</span>
+          <span class="cloud-tag">Generative AI Tools</span>
+          <span class="cloud-tag">Introductory Optics</span>
+          <span class="cloud-tag">Formal Methods in Software</span>
+          <span class="cloud-tag">Internet of Things (IoT)</span>
+          <span class="cloud-tag">Microfabrication & Thin Films</span>
+          <span class="cloud-tag">Electric Power & Renewable Energy</span>
+          <span class="cloud-tag">Principles of LiDAR</span>
+          <span class="cloud-tag">Advanced Radio Frequency</span>
+          <span class="cloud-tag">Electric Drive Systems</span>
+          <span class="cloud-tag">Renewable Energy Systems</span>
+        </div>
+
+        <input type="text" id="courseSearch" placeholder="Filter toolsets (e.g., 'Sputtering', 'AI', 'Power')..." />
+
+        <!-- Consolidated Domain Cards -->
+        <div class="matrix-grid" id="courseGrid">
+          
+          <div class="matrix-card" data-keywords="electric power systems renewable energy wind solar ev powertrains electric drive motors pwm inverters hvdc grid stability transformers rectifiers three-phase 3-bus overvoltage transient">
+            <h4>Power Infrastructure & Electric Drives</h4>
+            <p><strong>Integrated Courses:</strong> Electric Power System & Renewable Energy, Renewable Energy (ISE), Electric Drive Systems.</p>
+            <p class="card-desc">Dynamic modeling of high-performance electric motors, PWM inverters, and EV powertrains. Simulated 3-bus power flows, HVDC transmission transients, and utility-scale solar/wind grid integrations.</p>
+          </div>
+
+          <div class="matrix-card" data-keywords="cleanroom microfabrication sputtering photolithography sem ellipsometry thin-film silicon koh etch optics vase az1518 lor 5b lidar photodiode laser fwhm rf radio frequency impedance matching antenna">
+            <h4>Hardware, Optics & RF Sensing</h4>
+            <p><strong>Integrated Courses:</strong> Microfabrication & Thin Film, Principles of LiDAR, Introductory Optics, Advanced Radio Frequency.</p>
+            <p class="card-desc">Cleanroom fabrication (bilayer liftoff, RF sputtering, KOH wet-etching). Modeled pulsed-laser LiDAR architectures, high-frequency RF circuit impedance matching, and fundamental electromagnetic wave diffraction.</p>
+          </div>
+
+          <div class="matrix-card" data-keywords="machine learning ml generative ai llm chatgpt algorithms combinatorial optimization graph theory np-complete formal methods software verification dafny alloy iot internet of things sensors security">
+            <h4>AI, IoT & Software Architecture</h4>
+            <p><strong>Integrated Courses:</strong> Machine Learning, Generative AI, Graph Algorithms & Combinatorial Optimization, Formal Methods in Software Engineering, Internet of Things.</p>
+            <p class="card-desc">Engineered neural networks, clustering algorithms, and LLM integrations. Proved software consistency using formal methods (Dafny/Alloy) and designed secure, edge-computing IoT sensor architectures.</p>
+          </div>
+
+          <div class="matrix-card" data-keywords="medical imaging physics ct mr mri ultrasound pet spect fourier laplace z-transform biomedical signal processing stochastic digital image processing compression segmentation">
+            <h4>Biomedical Signals & Image Processing</h4>
+            <p><strong>Integrated Courses:</strong> Medical Imaging Physics, Biomedical Signal Processing, Digital Image Processing.</p>
+            <p class="card-desc">Data acquisition physics for X-ray, CT, MRI, and PET scans. Applied Fourier and Laplace transforms to stochastic biological markers (cardiac/circadian) and performed complex digital image segmentations in MATLAB.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+</Layout>
+
+<!-- ==================== STYLES ==================== -->
+<style>
+  /* --- Layout & Structure Reset --- */
+  .experience-page {
+    max-width: 1024px;
+    width: min(100%, 92%);
+    margin: 0 auto;
+    padding: 120px 0 80px 0;
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
+    gap: 32px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 40px;
+  }
+
+  .page-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: var(--text-primary);
+  }
+
+  .subtitle {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-top: 12px;
+    margin-bottom: 0;
+    max-width: 550px;
+    line-height: 1.5;
+  }
+
+  /* --- Premium Action Button --- */
+  .btn-resume-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: var(--text-primary);
+    color: var(--bg-black);
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+  .btn-resume-download:hover {
+    background-color: #e8e8ed;
+  }
+  .download-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .section-tag-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: #2f80ed;
+    background: rgba(47, 128, 237, 0.1);
+    border: 1px solid rgba(47, 128, 237, 0.2);
+    border-radius: 100px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  /* --- Apple Sticky Row Architecture --- */
+  .exp-track-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 64px 0;
+    border-bottom: 1px solid var(--border-color);
+    align-items: start;
+  }
+
+  .border-top-only {
+    border-bottom: none;
+  }
+
+  @media (min-width: 768px) {
+    .exp-track-row {
+      grid-template-columns: 3fr 5fr;
+      gap: 64px;
+    }
+    .track-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+  }
+
+  .track-num {
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .track-sidebar h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 8px;
+    margin-bottom: 0;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .track-content-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  /* --- Experience Data Cards & Image Splitting --- */
+  .experience-card {
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    padding-bottom: 40px;
+  }
+  .experience-card:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .card-meta .card-date {
+    font-family: monospace;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .card-meta h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 6px 0 2px 0;
+    letter-spacing: -0.01em;
+  }
+  .card-meta .card-org {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: #34c759;
+    margin-bottom: 18px;
+  }
+
+  .card-content-split {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: flex-start;
+  }
+
+  .card-text-column {
+    flex: 1 1 300px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.6;
+  }
+  .card-text-column p {
+    margin-top: 0;
+    margin-bottom: 14px;
+  }
+  .card-text-column strong {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .card-image-column {
+    flex: 0 0 220px;
+    width: 100%;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: #0d0d0e;
+    padding: 6px;
+  }
+
+  .exp-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    filter: grayscale(10%);
+    transition: filter 0.3s ease;
+  }
+  .exp-photo:hover {
+    filter: grayscale(0%);
+  }
+
+  /* --- Interactive Course Filter Matrix --- */
+  #courseSearch {
+    width: 100%;
+    padding: 12px 16px;
+    background: #0d0d0e;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 100px;
+    margin-top: 24px;
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+  #courseSearch:focus {
+    border-color: #333336;
+    background: #111112;
+  }
+
+  .matrix-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .matrix-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    border-radius: 14px;
+    text-align: left;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .matrix-card h4 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 0;
+    margin-bottom: 6px;
+  }
+
+  .matrix-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+    font-weight: 300;
+  }
+
+  /* --- Course Word Cloud --- */
+  .sidebar-context {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-top: 12px;
+    font-weight: 300;
+  }
+
+  .course-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .cloud-tag {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-gray-apple);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    padding: 8px 14px;
+    border-radius: 100px;
+    transition: all 0.3s ease;
+    cursor: default;
+  }
+
+  /* When JS detects a match, it adds this class */
+  .cloud-tag.highlight {
+    color: #ffffff;
+    background: rgba(47, 128, 237, 0.15); /* Apple blue tint */
+    border-color: rgba(47, 128, 237, 0.4);
+    box-shadow: 0 0 12px rgba(47, 128, 237, 0.2);
+  }
+
+  .matrix-card p strong {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .card-desc {
+    margin-top: 10px !important;
+  }
+</style>
+
+<!-- ==================== INTERACTIVE FILTER SCRIPT ==================== -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("courseSearch") as HTMLInputElement;
+    const cards = document.querySelectorAll(".matrix-card");
+
+    if (searchInput) {
+      searchInput.addEventListener("input", (e) => {
+        const query = (e.target as HTMLInputElement).value.toLowerCase().trim();
+
+        cards.forEach(card => {
+          const keywords = card.getAttribute("data-keywords") || "";
+          if (keywords.includes(query)) {
+            (card as HTMLElement).style.display = "block";
+            setTimeout(() => { (card as HTMLElement).style.opacity = "1"; }, 10);
+          } else {
+            (card as HTMLElement).style.opacity = "0";
+            (card as HTMLElement).style.display = "none";
+          }
+        });
+      });
+    }
+  });
+</script>

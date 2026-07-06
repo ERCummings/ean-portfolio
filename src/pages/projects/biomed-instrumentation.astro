@@ -1,0 +1,290 @@
+---
+// src/pages/projects/biomed-instrumentation.astro
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Biomedical Instrumentation | Ean Cummings">
+  <article class="project-deep-dive animate-fade-in">
+    
+    <!-- 1. CINEMATIC HEADER -->
+    <header class="project-hero">
+      <div class="project-hero-container">
+        <span class="pro-tag-badge">Biomedical Systems Engineering</span>
+        <h1 class="pro-headline">ECG Data Acquisition</h1>
+        <p class="pro-subheading">
+          A bespoke instrumentation system designed for cardiac signal acquisition, featuring a multi-stage analog filter topology and digital peak-detection algorithms.
+        </p>
+      </div>
+      <div class="grid-overlay"></div>
+    </header>
+
+    <!-- 2. ANALOG FRONTEND -->
+    <section class="pro-content-row">
+      <div class="pro-sidebar">
+        <span class="row-num">01 / Analog Frontend</span>
+        <h2>Instrumentation & Filtering</h2>
+      </div>
+      
+      <div class="pro-main-body">
+        <p>
+          The system's integrity relies on a high-gain instrumentation amplifier (gain approximately 1000 V/V) configured to isolate cardiac micro-volt signals from common-mode noise. The signal chain incorporates a low-pass filter (cutoff 250 Hz) and a high-pass filter (cutoff 0.03 Hz) to isolate the QRS complex while eliminating baseline wander and high-frequency interference.
+        </p>
+        <p>
+          To ensure subject safety and signal clarity, I implemented a <strong>Driven Right Leg (DRL) circuit</strong>, which effectively minimizes common-mode interference by actively canceling body-coupled noise.
+        </p>
+
+        <!-- Media Gallery -->
+        <div class="product-media-gallery">
+          <div class="media-panel-box">
+            <img src="/images/ekg-schematic.png" alt="Instrumentation Amplifier Schematic" class="media-photo" />
+            <span class="media-caption">Instrumentation amplifier schematic utilizing precise resistor values to achieve a target gain of 1000 V/V.</span>
+          </div>
+          <div class="media-panel-box">
+            <img src="/images/ekg-freq-response.png" alt="Frequency Response Plot" class="media-photo" />
+            <span class="media-caption">System frequency response verifying filter cutoff accuracy and consistent gain performance.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. DIGITAL PIPELINE -->
+    <section class="pro-content-row">
+      <div class="pro-sidebar">
+        <span class="row-num">02 / Digital Pipeline</span>
+        <h2>DSP & Peak Detection</h2>
+      </div>
+      
+      <div class="pro-main-body">
+        <p>
+          To process the raw signal, I designed a real-time digital signal processing pipeline running on an Arduino platform. A <strong>60 Hz notch filter</strong>—mathematically modeled with MATLAB coefficients—removes power-line noise, a standard challenge in non-shielded clinical environments.
+        </p>
+        <p>
+          The pipeline utilizes a difference equation for stable filtering, followed by an adaptive peak-detection algorithm that dynamically compares input samples against calculated thresholds. This system accurately computes beats-per-minute (BPM) and provides real-time identification of regular vs. irregular cardiac rhythms based on inter-peak delta-T intervals.
+        </p>
+      </div>
+    </section>
+
+    <!-- 4. TECH SPECS -->
+    <section class="pro-content-row border-top-only">
+      <div class="pro-sidebar">
+        <span class="row-num">03 / Specs</span>
+        <h2>Instrumentation Specs</h2>
+      </div>
+      
+      <div class="pro-main-body">
+        <div class="specs-mini-grid">
+          <div class="spec-mini-card">
+            <h4>Analog Gain</h4>
+            <p>1000 V/V Instrumentation Amplifier Topology</p>
+          </div>
+          <div class="spec-mini-card">
+            <h4>Filtering</h4>
+            <p>LPF (250 Hz), HPF (0.03 Hz), 60 Hz Notch</p>
+          </div>
+          <div class="spec-mini-card">
+            <h4>Noise Mitigation</h4>
+            <p>Driven Right Leg (DRL) Circuitry</p>
+          </div>
+          <div class="spec-mini-card">
+            <h4>Analysis</h4>
+            <p>Real-time Peak Detection & Delta-T Rhythm Analysis</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </article>
+</Layout>
+
+<style>
+  .project-deep-dive {
+    max-width: 1024px;
+    width: min(100%, 92%);
+    margin: 0 auto;
+    padding: 80px 0;
+  }
+
+  /* --- Hero Styling --- */
+  .project-hero {
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 40px;
+  }
+
+  .project-hero-container {
+    z-index: 10;
+  }
+
+  .pro-tag-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--accent-blue);
+    background: rgba(47, 128, 237, 0.1);
+    border: 1px solid rgba(47, 128, 237, 0.2);
+    border-radius: 100px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .pro-headline {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px 0;
+    color: var(--text-apple);
+  }
+
+  .pro-subheading {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 650px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  /* --- Row Layout Mechanics --- */
+  .pro-content-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 64px 0;
+    border-bottom: 1px solid var(--border-color);
+    align-items: start;
+  }
+
+  .border-top-only {
+    border-bottom: none;
+  }
+
+  @media (min-width: 768px) {
+    .pro-content-row {
+      grid-template-columns: 3fr 5fr;
+      gap: 64px;
+    }
+    .pro-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+  }
+
+  .row-num {
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .pro-sidebar h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 8px;
+    margin-bottom: 0;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .pro-main-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+  .pro-main-body p {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  /* --- Upgraded Dual Photo Showcase Grid --- */
+  .product-media-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 32px;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .product-media-gallery {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .media-panel-box {
+    background: #0d0d0e;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .media-photo {
+    width: 100%;
+    max-height: 240px; 
+    object-fit: cover; 
+    object-position: top center; 
+    border-radius: 8px;
+    display: block;
+  }
+
+  .media-caption {
+    display: block;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 10px;
+    padding: 0 4px;
+    text-align: left;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  /* --- Technical Spec Breakdown --- */
+  .specs-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .spec-mini-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .spec-mini-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .spec-mini-card p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+</style>

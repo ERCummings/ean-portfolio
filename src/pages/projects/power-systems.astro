@@ -1,0 +1,389 @@
+---
+// src/pages/projects/power-systems.astro
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Power Infrastructure Simulation | Ean Cummings">
+  <article class="project-deep-dive animate-fade-in">
+    
+    <!-- ==================== 1. CINEMATIC HEADER ==================== -->
+    <header class="project-hero">
+      <div class="project-hero-container">
+        <span class="pro-tag-badge">Critical Infrastructure Simulation</span>
+        <h1 class="pro-headline">Grid Analytics & Transient Modeling</h1>
+        <p class="pro-subheading">
+          A collection of advanced power systems frameworks analyzing grid efficiencies, localized reactive power compensation, and harmonic distortion topologies.
+        </p>
+      </div>
+      <div class="grid-overlay"></div>
+    </header>
+
+    <!-- ==================== 2. TRANSCRIPTION LOSS & COMPENSATION ==================== -->
+    <section class="pro-content-row">
+      <div class="pro-sidebar">
+        <span class="row-num">01 / DSP & Optimization</span>
+        <h2>Power Factor Correction & Line Losses</h2>
+      </div>
+      
+      <div class="pro-main-body">
+        <p>
+          Uncompensated inductive loads pull extensive reactive currents through transmission lines, creating severe I²R thermal energy line losses and lowering overall generator efficiency. Using <strong>PSCAD industrial simulation software</strong>, I modeled a single-phase AC transmission line representation operating at 60 Hz to analyze power distribution dynamics.
+        </p>
+        <p>
+          By implementing a localized 297 µF capacitor bank array parallel to the load, the network's reactive power profile dropped from 1,612 VAR to approximately 0 VAR. This successfully optimized the system to unity power factor (1.0), reducing the required source current from 30.9 A to 27.9 A and cutting line losses by over 14% while improving terminal voltages.
+        </p>
+        
+        <div class="product-media-gallery">
+          <div class="media-panel-box">
+            <img src="/images/power-pscad-uncorrected.png" alt="PSCAD Waveform Output Uncorrected" class="media-photo" />
+            <span class="media-caption">Uncorrected lagging phase waveforms drawing 30.9 A RMS with high transmission losses.</span>
+          </div>
+          <div class="media-panel-box">
+            <img src="/images/power-pscad-corrected.png" alt="PSCAD Waveform Output Corrected" class="media-photo" />
+            <span class="media-caption">Corrected system waveforms operating at unity power factor with line current dropped to 27.9 A RMS.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. MULTI-BUS NETWORK ANALYSIS ==================== -->
+    <section class="pro-content-row">
+      <div class="pro-sidebar">
+        <span class="row-num">02 / Grid Flow Topology</span>
+        <h2>3-Bus PowerWorld Line Tuning</h2>
+      </div>
+      
+      <div class="pro-main-body">
+        <p>
+          Using <strong>PowerWorld Simulator</strong>, I executed an advanced 3-bus network matrix mapping line series impedances and shunt charging admittances across high-voltage (345 kV) grids. Modeling these long-line parameters explicitly demonstrates that transmission line shunt capacitances act as natural, localized sources of reactive power.
+        </p>
+        <p>
+          Introducing these line admittances lowered the generator demand at Bus 2 from 333.3 MVA to 232.7 MVA. This drop in current through the grid cut total line heating losses across the entire power distribution network from 8.41 MW down to 7.74 MW, optimizing systemic transmission flow constraints.
+        </p>
+
+        <div class="system-diagram-container">
+          <img src="/images/powerworld-3bus.png" alt="PowerWorld 3-Bus Simulation Matrix" class="diagram-photo" />
+          <span class="media-caption">Interactive PowerWorld flow graph managing real and reactive power directions across the 3-bus grid matrix.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. RECTIFIER HARMONIC DISTORTION ==================== -->
+    <section class="pro-content-row">
+      <div class="pro-sidebar">
+        <span class="row-num">03 / Signal Integrity</span>
+        <h2>Harmonic Distortion & Commutation Notches</h2>
+      </div>
+      
+      <div class="pro-main-body">
+        <p>
+          To evaluate non-linear industrial loads, I simulated a 3-phase / 6-pulse rectifier infrastructure using high-speed thyristor switching sequences. Non-linear loading introduces severe distortion back into supply lines. I evaluated this by shifting the source impedance from purely resistive to inductive models to analyze Total Harmonic Distortion (THD) profiles.
+        </p>
+        <p>
+          The inductive source impedance smoothed the discontinuous, sharp peaks of the line current, dropping current THD from an extreme 95.56% to a manageable 23.75%. However, this inductance introduced severe <strong>commutation notches</strong> into the voltage curves due to sudden L(di/dt) voltage drops during thyristor transitions, causing voltage THD to spike to 15.86%. I verified these numerical calculations by running parallel Fast Fourier Transforms (FFT) in MATLAB.
+        </p>
+
+        <div class="topology-specs-box">
+          <div class="topo-row">
+            <span class="topo-label">Metrics Evaluated</span>
+            <span class="topo-value">Resistive Source Loading</span>
+            <span class="topo-value">Inductive Source Loading</span>
+          </div>
+          <div class="topo-row">
+            <span class="topo-label">Voltage THD (Ea)</span>
+            <span class="topo-value">1.2085% (Clean Sine)</span>
+            <span class="topo-value">15.8576% (Commutation Notches)</span>
+          </div>
+          <div class="topo-row">
+            <span class="topo-label">Current THD (Ia)</span>
+            <span class="topo-value">95.5582% (Discontinuous Peaks)</span>
+            <span class="topo-value">23.7467% (Smoothed Wave)</span>
+          </div>
+          <div class="topo-row">
+            <span class="topo-label">DC Ripple Frequency</span>
+            <span class="topo-value">360 Hz (6 x 60 Hz standard conduction intervals)</span>
+            <span class="topo-value">360 Hz (6 x 60 Hz standard conduction intervals)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. SYSTEM SPECIFICATIONS ==================== -->
+    <section class="pro-content-row border-top-only">
+      <div class="pro-sidebar">
+        <span class="row-num">04 / Stack</span>
+        <h2>Simulation Architecture</h2>
+      </div>
+      
+      <div class="pro-main-body">
+        <div class="specs-mini-grid">
+          <div class="spec-mini-card">
+            <h4>Grid Engines</h4>
+            <p>PSCAD Electromagnetic Transient Simulation, PowerWorld Simulator</p>
+          </div>
+          <div class="spec-mini-card">
+            <h4>Validation Core</h4>
+            <p>MATLAB Fast Fourier Transform (FFT) Data Arrays</p>
+          </div>
+          <div class="spec-mini-card">
+            <h4>Grid Parameter Base</h4>
+            <p>345 kV Per-Phase Admittance, 100 MVA Base Networks</p>
+          </div>
+          <div class="spec-mini-card">
+            <h4>Solid-State Architecture</h4>
+            <p>Thyristor Delay Adjustments, IGBT Voltage Source Converters (VSC)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </article>
+</Layout>
+
+<!-- ==================== STYLES ==================== -->
+<style>
+  .project-deep-dive {
+    max-width: 1024px;
+    width: min(100%, 92%);
+    margin: 0 auto;
+    padding: 80px 0;
+  }
+
+  .project-hero {
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 40px;
+  }
+
+  .project-hero-container {
+    z-index: 10;
+  }
+
+  .pro-tag-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--accent-blue);
+    background: rgba(47, 128, 237, 0.1);
+    border: 1px solid rgba(47, 128, 237, 0.2);
+    border-radius: 100px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .pro-headline {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px 0;
+    color: var(--text-apple);
+  }
+
+  .pro-subheading {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 650px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  .pro-content-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 64px 0;
+    border-bottom: 1px solid var(--border-color);
+    align-items: start;
+  }
+
+  .border-top-only {
+    border-bottom: none;
+  }
+
+  @media (min-width: 768px) {
+    .pro-content-row {
+      grid-template-columns: 3fr 5fr;
+      gap: 64px;
+    }
+    .pro-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+  }
+
+  .row-num {
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .pro-sidebar h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 8px;
+    margin-bottom: 0;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .pro-main-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+  .pro-main-body p {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .product-media-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 32px;
+    width: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .product-media-gallery {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .media-panel-box {
+    background: #0d0d0e;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .media-photo {
+    width: 100%;
+    max-height: 240px; 
+    object-fit: cover; 
+    object-position: top center; 
+    border-radius: 8px;
+    display: block;
+  }
+
+  .media-caption {
+    display: block;
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 10px;
+    padding: 0 4px;
+    text-align: left;
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  .system-diagram-container {
+    margin-top: 32px;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: #0d0d0e;
+    padding: 24px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .diagram-photo {
+    width: 100%;
+    max-height: 450px; 
+    object-fit: contain; 
+    display: block;
+  }
+
+  .topology-specs-box {
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 16px;
+  }
+
+  .topo-row {
+    display: grid;
+    grid-template-columns: 2fr 3fr 3fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    font-size: 13px;
+  }
+
+  .topo-row:last-child {
+    border-bottom: none;
+  }
+
+  .topo-label {
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .topo-value {
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 640px) {
+    .topo-row {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+  }
+
+  .specs-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .spec-mini-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .spec-mini-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .spec-mini-card p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+</style>

@@ -1,0 +1,305 @@
+---
+// src/pages/projects/health-tracking.astro
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Health Analytics Ecosystem | Ean Cummings">
+  <article class="project-deep-dive animate-fade-in">
+    
+    <!-- ==================== 1. CINEMATIC HEADER ==================== -->
+    <header class="project-hero">
+      <div class="project-hero-container">
+        <span class="pro-tag-badge">Active Production Sprint</span>
+        <h1 class="pro-headline">Healthur Ecosystem</h1>
+        <p class="pro-subheading">
+          A native iOS health architecture bridging high-frequency biometric streaming with on-device LLM inference to provide context-aware recovery coaching.
+        </p>
+      </div>
+      <div class="grid-overlay"></div>
+    </header>
+
+    <!-- ==================== 2. ARCHITECTURE BLOCK ==================== -->
+    <section class="pro-content-row">
+      <div class="pro-sidebar">
+        <span class="row-num">01 / Scope</span>
+        <h2>System Architecture Objectives</h2>
+      </div>
+      
+      <div class="pro-main-body">
+        <p>
+          Healthur is designed to solve the data-overload problem inherent in modern wearables. By leveraging <strong>Apple HealthKit</strong>, the system aggregates disparate data streams—HRV, sleep stages, resting heart rate, and training load—into a unified, user-centered Smart Health Score.
+        </p>
+        <p>
+          The architecture is built on a privacy-first, on-device processing model. By utilizing <strong>CoreML and iOS 26 integrated LLM frameworks</strong>, the system performs all personalized health inference locally, eliminating the need for sensitive physiological data to ever leave the user's encrypted device storage.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== 3. DATA TOPOLOGY BLOCK ==================== -->
+    <section class="pro-content-row">
+      <div class="pro-sidebar">
+        <span class="row-num">02 / Infrastructure</span>
+        <h2>Data Pipeline & AI Integration</h2>
+      </div>
+      
+      <div class="pro-main-body">
+        <p>
+          The system pipeline treats biometric data as a multi-signal control loop. I am currently architecting the <strong>InsightEngine</strong>, which correlates daily recovery metrics with user-logged qualitative reflections to detect patterns that simple numeric charting misses.
+        </p>
+        
+        <!-- Text-Based Topology Table replacing the image -->
+        <div class="topology-specs-box">
+          <div class="topo-row">
+            <span class="topo-label">UI Layer</span>
+            <span class="topo-value">SwiftUI Screens (Home, Activity, Recovery, Insights)</span>
+          </div>
+          <div class="topo-row">
+            <span class="topo-label">Logic Layer</span>
+            <span class="topo-value">MVVM Architecture isolating ViewModels from raw data logic</span>
+          </div>
+          <div class="topo-row">
+            <span class="topo-label">Data Managers</span>
+            <span class="topo-value">Apple HealthKit integrations for Workout, Sleep, and HRV models</span>
+          </div>
+          <div class="topo-row">
+            <span class="topo-label">AI Engine</span>
+            <span class="topo-value">On-Device LLM managing the InsightEngine and PlanBuilderAI</span>
+          </div>
+          <div class="topo-row">
+            <span class="topo-label">Core Security</span>
+            <span class="topo-value">CryptoKit encryption and iCloud Keychain passkey authentication</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. TECH SPECS DASHBOARD ==================== -->
+    <section class="pro-content-row border-top-only">
+      <div class="pro-sidebar">
+        <span class="row-num">03 / Tech Stack</span>
+        <h2>Development Tools</h2>
+      </div>
+      
+      <div class="pro-main-body">
+        <div class="specs-mini-grid">
+          <div class="spec-mini-card">
+            <h4>Languages</h4>
+            <p>Swift / SwiftUI / Combine Framework</p>
+          </div>
+          <div class="spec-mini-card">
+            <h4>Biometric Source</h4>
+            <p>Apple HealthKit & CoreBluetooth</p>
+          </div>
+          <div class="spec-mini-card">
+            <h4>AI Engine</h4>
+            <p>CoreML & On-Device Apple LLM</p>
+          </div>
+          <div class="spec-mini-card">
+            <h4>Data Security</h4>
+            <p>CryptoKit & Passkey Authentication</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </article>
+</Layout>
+
+<!-- ==================== STYLES ==================== -->
+<style>
+  .project-deep-dive {
+    max-width: 1024px;
+    width: min(100%, 92%);
+    margin: 0 auto;
+    padding: 80px 0;
+  }
+
+  /* --- Hero Styling --- */
+  .project-hero {
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 40px;
+  }
+
+  .project-hero-container {
+    z-index: 10;
+  }
+
+  .pro-tag-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: var(--accent-blue);
+    background: rgba(47, 128, 237, 0.1);
+    border: 1px solid rgba(47, 128, 237, 0.2);
+    border-radius: 100px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .pro-headline {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0 0 16px 0;
+    color: var(--text-apple);
+  }
+
+  .pro-subheading {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 650px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  /* --- Row Layout Mechanics --- */
+  .pro-content-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 64px 0;
+    border-bottom: 1px solid var(--border-color);
+    align-items: start;
+  }
+
+  .border-top-only {
+    border-bottom: none;
+  }
+
+  @media (min-width: 768px) {
+    .pro-content-row {
+      grid-template-columns: 3fr 5fr;
+      gap: 64px;
+    }
+    .pro-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+  }
+
+  .row-num {
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .pro-sidebar h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 8px;
+    margin-bottom: 0;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  .pro-main-body {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.65;
+  }
+  .pro-main-body p {
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+
+  /* --- Topology Table (Replaces Images) --- */
+  .topology-specs-box {
+    margin-top: 32px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 16px;
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 24px;
+  }
+
+  .topo-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    font-size: 13px;
+  }
+
+  .topo-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .topo-label {
+    font-weight: 600;
+    color: var(--text-primary);
+    flex: 1;
+  }
+
+  .topo-value {
+    color: var(--text-secondary);
+    font-weight: 300;
+    text-align: right;
+    flex: 2;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 640px) {
+    .topo-row {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .topo-value {
+      text-align: left;
+    }
+  }
+
+  /* --- Technical Spec Breakdown --- */
+  .specs-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .spec-mini-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .spec-mini-card h4 {
+    margin: 0 0 6px 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .spec-mini-card p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
+</style>

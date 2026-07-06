@@ -1,11 +1,561 @@
 ---
-import Welcome from '../components/Welcome.astro';
+// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Ean Cummings | Integrated Sensing & IoT">
+  
+  <!-- ==================== 1. HERO SECTION ==================== -->
+  <section class="hero-section">
+    <div class="hero-container">
+      
+      <!-- Dual-Degree Apple Badge with Balanced Glows -->
+      <div class="badge-container">
+        <span class="tech-badge ms-badge">M.S. Electrical & Computer Engineering</span>
+        <span class="badge-separator">•</span>
+        <span class="tech-badge bse-badge">B.S.E. Biomedical Engineering</span>
+      </div>
+      
+      <h1 class="hero-headline">
+        I engineer tech that <br class="desktop-only" /> connects hardware to life.
+      </h1>
+      
+      <p class="hero-tagline">
+        Bridging the gap between semiconductor cleanrooms, real-time signal processing, and beautiful consumer software systems.
+      </p>
+      
+      <div class="hero-actions">
+        <a href="#story" class="btn-primary">Read my story</a>
+        <a href="/Ean_Cummings_Resume.pdf" target="_blank" class="btn-secondary">
+          Download Resume (PDF)
+        </a>
+      </div>
+    </div>
+    
+    <div class="grid-overlay"></div>
+  </section>
+
+  <!-- ==================== 2. INTERACTIVE HARDWARE SHOWCASE ==================== -->
+  <section class="hardware-showcase">
+    <div class="showcase-text">
+      <h2>Precision at every layer.</h2>
+      <p>From structural material fabrication to micro-scale logic systems.</p>
+    </div>
+    
+    <div class="scroll-element-container">
+      <img 
+        src="/images/hardware-showcase.png" 
+        alt="Titanium Bicycle Frame Fabrication" 
+        class="hardware-image" 
+        id="spinning-hardware"
+      />
+    </div>
+  </section>
+
+  <!-- ==================== 3. THE STORY NARRATIVE SCROLL ==================== -->
+  <section id="story" class="story-section">
+    
+    <!-- Narrative Block 1 -->
+    <div class="story-block">
+      <div class="story-sidebar">
+        <span class="block-num">01 / The Catalyst</span>
+        <h2 class="block-heading">From Healthcare to Hardware</h2>
+        
+        <div class="image-box-container">
+          <img src="/images/ean-portrait.jpg" alt="Ean Cummings" class="sidebar-embedded-img" />
+        </div>
+      </div>
+      <div class="story-content">
+        <p>
+          I started my path in <strong>Biomedical Engineering</strong>, deeply fascinated by image tracking and medical signals. But working with tools built by others sparked a realization: <em>I didn't just want to interpret diagnostic data—I wanted to build the instrumentation driving it.</em>
+        </p>
+        <p>
+          That exact drive shifted me into <strong>Electrical and Computer Engineering</strong>. I chose to master the full lifecycle of a device, ensuring that when data moves from a raw physical environment into a software ecosystem, it arrives fast, securely, and with pinpoint mathematical accuracy.
+        </p>
+      </div>
+    </div>
+
+    <!-- Narrative Block 2 -->
+    <div class="story-block">
+      <div class="story-sidebar">
+        <span class="block-num">02 / The Toolkit</span>
+        <h2 class="block-heading">Sensing & Infrastructure</h2>
+        
+        <!-- Embedded SEM Image Callout -->
+        <div class="image-box-container">
+          <img src="/images/sem-etch.png" alt="SEM Anisotropic Etch Micrograph" class="sidebar-embedded-img" />
+          <span class="img-caption">Anisotropic KOH wet etch (111)-sidewall SEM profile.</span>
+        </div>
+      </div>
+      <div class="story-content">
+        <p>
+          My engineering philosophy centers around cross-disciplinary depth. Inside the cleanroom, I execute multi-stage bilayer lithography flows utilizing <strong>LOR 5B and AZ1518 resist matrices</strong>, deposit uniform 50 nm SiO2 dielectric layers via <strong>reactive RF magnetron sputtering</strong>, and map anisotropic KOH silicon etch pathways down to the crystal plane.
+        </p>
+        <p>
+          Out of the cleanroom, I construct and tune <strong>transimpedance amplifier (TIA) feedback compensation networks</strong> using NE5532 topologies to resolve capacitance-induced oscillations. From characterizing diffusion capacitance transients to model non-linear laser beam parameters for <strong>NASA-sponsored atmospheric payloads</strong>, I turn physical phenomena into clean data.
+        </p>
+        
+        <div class="micro-specs">
+          <div class="spec-item">
+            <h4>Cleanroom & Photonics</h4>
+            <p>Photolithography, RF Sputtering, VASE Ellipsometry Cauchy Modeling.</p>
+          </div>
+          <div class="spec-item">
+            <h4>Embedded & Cloud</h4>
+            <p>RTOS Pipelines, DSP Filters, TLS Edge Security.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+    <!-- ==================== 4. SPECIFICATIONS DASHBOARD ==================== -->
+  <section id="specs-dashboard" class="specs-section">
+    <div class="specs-header">
+      <span class="block-num">Technical Specifications</span>
+      <h2>Validated Engineering Capabilities</h2>
+    </div>
+
+    <div class="specs-grid">
+      <!-- Tier 1: Software & Logic Architectures -->
+      <div class="spec-card">
+        <h3>Programming & Logic</h3>
+        <ul>
+          <li>Swift & iOS Ecosystem</li>
+          <li>Python</li>
+          <li>C++</li>
+          <li>Java</li>
+          <li>MATLAB</li>
+          <li>R</li>
+          <li>Alloy & Dafny (Formal Methods)</li>
+        </ul>
+      </div>
+
+      <!-- Tier 2: Physical Layer & Microfabrication -->
+      <div class="spec-card">
+        <h3>Hardware & Cleanroom</h3>
+        <ul>
+          <li>Photolithography</li>
+          <li>RF Magnetron Sputtering</li>
+          <li>Anisotropic Wet/Dry Etching</li>
+          <li>Spectroscopic Ellipsometry (VASE)</li>
+          <li>Scanning Electron Microscopy (SEM)</li>
+          <li>Circuit Design & Microcontrollers (ESP32/Arduino)</li>
+          <li>Oscilloscopes & Precision Signal Analysis</li>
+          <li>Precision TIG Welding (Titanium/Steel Alloys)</li>
+        </ul>
+      </div>
+
+      <!-- Tier 3: Engineering Frameworks & Systems -->
+      <div class="spec-card">
+        <h3>Tools, Systems & Infrastructure</h3>
+        <ul>
+          <li>AutoCAD & Creo Parametric</li>
+          <li>ImageJ Digital Signal Processing</li>
+          <li>Git Version Control</li>
+          <li>Firebase & InfluxDB Cloud Infrastructure</li>
+          <li>PowerWorld Simulator</li>
+          <li>PSCAD (Power Systems Simulation)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="gate-actions">
+      <a href="/projects" class="btn-primary">Explore Project Systems</a>
+      <a href="/experience" class="btn-secondary">View Experience Timeline</a>
+    </div>
+  </section>
+
 </Layout>
+
+<!-- ==================== STYLES ==================== -->
+<style>
+  :root {
+    --bg-color: #000000;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1a6;
+    --text-muted: #646466;
+    --accent-blue: #2f80ed;
+    --border-color: #1c1c1e;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  /* --- Hero Section Styling --- */
+  .hero-section {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-container {
+    max-width: 900px;
+    z-index: 10;
+  }
+
+  .badge-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 32px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 6px 16px;
+    border-radius: 100px;
+  }
+
+  .tech-badge {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .ms-badge { 
+    color: var(--accent-blue); 
+    text-shadow: 0 0 12px rgba(47, 128, 237, 0.3); 
+  }
+
+  .bse-badge { 
+    color: #34c759; 
+    text-shadow: 0 0 12px rgba(52, 199, 89, 0.3);  
+  }
+
+  .badge-separator { 
+    color: rgba(255, 255, 255, 0.2); 
+    font-size: 10px; 
+  }
+
+  .hero-headline {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: var(--text-primary);
+    background: linear-gradient(180deg, #ffffff 0%, #888888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 24px;
+    margin-top: 0;
+  }
+
+  @media (min-width: 768px) {
+    .hero-headline { font-size: 5.5rem; }
+    .desktop-only { display: inline; }
+  }
+  @media (max-width: 767px) {
+    .desktop-only { display: none; }
+  }
+
+  .hero-tagline {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 640px;
+    margin: 0 auto 40px auto;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  /* --- Button Designs --- */
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 100px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+  .btn-primary:hover { background-color: #e8e8ed; }
+
+  .btn-secondary {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: transparent;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 100px;
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+    transition: all 0.2s ease;
+  }
+  .btn-secondary:hover {
+    background-color: #1c1c1e;
+    border-color: #333336;
+  }
+
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+  }
+
+  /* --- Interactive Hardware Showcase --- */
+  .hardware-showcase {
+    padding: 100px 24px;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .showcase-text h2 {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+
+  .showcase-text p {
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+  }
+
+  .scroll-element-container {
+    max-width: 650px;
+    margin: 0 auto;
+    perspective: 1200px; 
+  }
+
+  .hardware-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.1s ease-out;
+    filter: drop-shadow(0 30px 50px rgba(255,255,255,0.03));
+  }
+
+  /* --- Sticky Scroll Narrative --- */
+  .story-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 120px 24px;
+  }
+
+  .story-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 160px;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .story-block {
+      grid-template-columns: 3fr 5fr;
+      gap: 80px;
+    }
+    .story-sidebar {
+      position: sticky;
+      top: 140px;
+    }
+  }
+
+  .block-num {
+    font-family: monospace;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .block-heading {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 8px;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  /* Structural Sidebar Photo Containers */
+  .image-box-container {
+    margin-top: 24px;
+    max-width: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: #0d0d0e;
+    padding: 6px;
+  }
+
+  .sidebar-embedded-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .img-caption {
+    display: block;
+    font-size: 10px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    padding: 0 4px;
+    line-height: 1.3;
+    text-align: left;
+  }
+
+  .story-content {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.7;
+    padding-top: 8px;
+  }
+
+  .story-content p {
+    margin-bottom: 24px;
+    margin-top: 0;
+  }
+
+  .story-content strong {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  .micro-specs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 48px;
+    padding-top: 32px;
+    border-t: 1px solid var(--border-color);
+  }
+
+  .spec-item h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    margin-top: 0;
+  }
+
+  .spec-item p {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* --- Specifications Dashboard Layout --- */
+  .specs-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 24px;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .specs-header {
+    margin-bottom: 48px;
+  }
+
+  .specs-header h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 8px;
+    letter-spacing: -0.02em;
+  }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: 768px) {
+    .specs-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .spec-card {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    padding: 32px;
+    border-radius: 16px;
+    text-align: left;
+    transition: border-color 0.3s ease;
+  }
+
+  .spec-card:hover {
+    border-color: #333336;
+  }
+
+  .spec-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+
+  .spec-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .spec-card li {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    font-weight: 300;
+  }
+
+  .gate-actions {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 40px;
+  }
+</style>
+
+<!-- ==================== SCROLL ANIMATION SCRIPT ==================== -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hardwareImg = document.getElementById("spinning-hardware");
+    
+    if (hardwareImg) {
+      window.addEventListener("scroll", () => {
+        const rect = hardwareImg.getBoundingClientRect();
+        const viewHeight = window.innerHeight;
+        
+        if(rect.top < viewHeight && rect.bottom > 0) {
+           const scrollProgress = (viewHeight - rect.top) / viewHeight;
+           
+           // Smooth multi-axis tilt tailored for the tubular frame profile
+           const rotateX = 15 - (scrollProgress * 25); 
+           const rotateY = -20 + (scrollProgress * 35); 
+           
+           hardwareImg.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        }
+      });
+    }
+  });
+</script>
