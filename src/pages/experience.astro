@@ -8,17 +8,20 @@ import Layout from '../layouts/Layout.astro';
     
     <!-- ==================== 1. PAGE HEADER ==================== -->
     <header class="page-header">
-      <div class="header-text">
-        <span class="section-tag-badge">Career Timeline</span>
-        <h1 class="page-title">Experience</h1>
-        <p class="subtitle">Bridging rigorous hardware engineering with high-level team leadership.</p>
+      <div class="header-content-wrapper">
+        <div class="header-text">
+          <span class="section-tag-badge">Career Timeline</span>
+          <h1 class="page-title">Experience</h1>
+          <p class="subtitle">Bridging rigorous hardware engineering with high-level team leadership.</p>
+        </div>
+        <a href="/Ean_Cummings_Engineering_Resume.pdf" target="_blank" class="btn-resume-download">
+          Download Résumé (PDF)
+          <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+        </a>
       </div>
-      <a href="/Ean_Cummings_Engineering_Resume.pdf" target="_blank" class="btn-resume-download">
-        Download Résumé (PDF)
-        <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-        </svg>
-      </a>
+      <div class="grid-overlay"></div>
     </header>
 
     <!-- ==================== 2. TIMELINE SECTIONS ==================== -->
@@ -98,7 +101,7 @@ import Layout from '../layouts/Layout.astro';
                 <strong>Structural Biomechanics:</strong> Characterized the mechanical properties and elastic moduli of diverse material domains using an MTS machine for three-point bending tests, mapping stress-vs-deflection curves using classical moment of inertia equations.
               </p>
               <p>
-                <strong>Cardiovascular Viscosity:</strong> Investigated non-Newtonian, shear-thinning fluid dynamics to design a synthetic blood-analogue; operated a Wells-Brookfield cone-and-plate viscometer at controlled temperatures to isolate a perfect 3.5 cP formulation using a 28.25% glycerin-to-water matrix].
+                <strong>Cardiovascular Viscosity:</strong> Investigated non-Newtonian, shear-thinning fluid dynamics to design a synthetic blood-analogue; operated a Wells-Brookfield cone-and-plate viscometer at controlled temperatures to isolate a perfect 3.5 cP formulation using a 28.25% glycerin-to-water matrix.
               </p>
               <p>
                 <strong>Cellular & Molecular Assays:</strong> Applied sterile hood techniques to culture CHO cell lines, isolated protein concentrations via Bradford assays and UV-Vis spectrophotometry, mapped molecular weights using SDS-PAGE, and extracted genomic DNA for Hind III / BamH1 restriction digests.
@@ -106,7 +109,6 @@ import Layout from '../layouts/Layout.astro';
             </div>
             <div class="card-image-column">
               <div class="image-wrapper">
-                <!-- Drop your three-point bending chart or gel photo here later -->
                 <img src="/images/biomed.png" alt="Biomedical Engineering Laboratory Data Chart" class="exp-photo" />
               </div>
             </div>
@@ -258,18 +260,43 @@ import Layout from '../layouts/Layout.astro';
     max-width: 1024px;
     width: min(100%, 92%);
     margin: 0 auto;
-    padding: 120px 0 80px 0;
+    padding: 80px 0;
   }
 
+  /* --- Cinematic Page Header --- */
   .page-header {
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 24px;
+    margin-bottom: 64px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: #000000;
+  }
+
+  .page-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.75) 65%, #000000 92%, #000000 100%), url('/images/experience-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+  }
+
+  .header-content-wrapper {
+    position: relative;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 80px;
     flex-wrap: wrap;
     gap: 32px;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 40px;
+    width: 100%;
   }
 
   .page-title {
@@ -277,17 +304,28 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 700;
     letter-spacing: -0.02em;
     margin: 0;
-    color: var(--text-primary);
+    color: #ffffff;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.75), 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .subtitle {
-    color: var(--text-secondary);
+    color: #e8e8ed;
     font-size: 1.2rem;
     font-weight: 300;
     margin-top: 12px;
     margin-bottom: 0;
     max-width: 550px;
     line-height: 1.5;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+  }
+
+  .grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    z-index: 2;
   }
 
   /* --- Premium Action Button --- */
@@ -302,10 +340,11 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 500;
     border-radius: 100px;
     text-decoration: none;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
   }
   .btn-resume-download:hover {
     background-color: #e8e8ed;
+    transform: translateY(-2px);
   }
   .download-icon {
     width: 14px;
@@ -318,12 +357,14 @@ import Layout from '../layouts/Layout.astro';
     font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.12em;
-    color: #2f80ed;
-    background: rgba(47, 128, 237, 0.1);
-    border: 1px solid rgba(47, 128, 237, 0.2);
+    color: var(--accent-blue);
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(47, 128, 237, 0.4);
     border-radius: 100px;
     text-transform: uppercase;
     margin-bottom: 16px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
 
   /* --- Apple Sticky Row Architecture --- */
@@ -532,10 +573,9 @@ import Layout from '../layouts/Layout.astro';
     cursor: default;
   }
 
-  /* When JS detects a match, it adds this class */
   .cloud-tag.highlight {
     color: #ffffff;
-    background: rgba(47, 128, 237, 0.15); /* Apple blue tint */
+    background: rgba(47, 128, 237, 0.15); 
     border-color: rgba(47, 128, 237, 0.4);
     box-shadow: 0 0 12px rgba(47, 128, 237, 0.2);
   }

@@ -5,11 +5,9 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Ean Cummings | Integrated Sensing & IoT">
   
-  <!-- ==================== 1. HERO SECTION ==================== -->
   <section class="hero-section">
     <div class="hero-container">
       
-      <!-- Dual-Degree Apple Badge with Balanced Glows -->
       <div class="badge-container">
         <span class="tech-badge ms-badge">M.S. Electrical & Computer Engineering</span>
         <span class="badge-separator">•</span>
@@ -35,7 +33,6 @@ import Layout from '../layouts/Layout.astro';
     <div class="grid-overlay"></div>
   </section>
 
-  <!-- ==================== 2. INTERACTIVE HARDWARE SHOWCASE ==================== -->
   <section class="hardware-showcase">
     <div class="showcase-text">
       <h2>Precision at every layer.</h2>
@@ -52,10 +49,8 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- ==================== 3. THE STORY NARRATIVE SCROLL ==================== -->
   <section id="story" class="story-section">
     
-    <!-- Narrative Block 1 -->
     <div class="story-block">
       <div class="story-sidebar">
         <span class="block-num">01 / The Catalyst</span>
@@ -74,8 +69,7 @@ import Layout from '../layouts/Layout.astro';
         </p>
       </div>
     </div>
-
-    <!-- Narrative Block 2 -->
+<!-- Narrative Block 2 -->
     <div class="story-block">
       <div class="story-sidebar">
         <span class="block-num">02 / The Toolkit</span>
@@ -89,36 +83,32 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <div class="story-content">
         <p>
-          My engineering philosophy centers around cross-disciplinary depth. Inside the cleanroom, I execute multi-stage bilayer lithography flows utilizing <strong>LOR 5B and AZ1518 resist matrices</strong>, deposit uniform 50 nm SiO2 dielectric layers via <strong>reactive RF magnetron sputtering</strong>, and map anisotropic KOH silicon etch pathways down to the crystal plane.
+          My passion lies in <strong>building things from the ground up</strong>—taking raw ideas and physical materials and turning them into integrated, functional realities. I love the challenge of cross-disciplinary engineering, whether that means using precision TIG welding to fabricate a custom steel or titanium bicycle frame, or designing the hardware layers of an iOS-linked medical ecosystem. 
         </p>
         <p>
-          Out of the cleanroom, I construct and tune <strong>transimpedance amplifier (TIA) feedback compensation networks</strong> using NE5532 topologies to resolve capacitance-induced oscillations. From characterizing diffusion capacitance transients to model non-linear laser beam parameters for <strong>NASA-sponsored atmospheric payloads</strong>, I turn physical phenomena into clean data.
+          I thrive where the physical layer meets data. I am deeply fascinated by <strong>microfabrication, optics, and light</strong>—skills I've put into practice everywhere from cleanroom lithography to analyzing laser beam parameters for atmospheric payloads. From tuning low-level analog circuits for cardiac instrumentation to parsing sensor streams for an IoT pet-health wearable, I view every project as an opportunity to bridge the gap between complex hardware and human-centered technology.
         </p>
         
         <div class="micro-specs">
           <div class="spec-item">
-            <h4>Cleanroom & Photonics</h4>
-            <p>Photolithography, RF Sputtering, VASE Ellipsometry Cauchy Modeling.</p>
+            <h4>Microfabrication & Optics</h4>
+            <p>Designing physical layer tech using cleanroom lithography and optical sensing systems.</p>
           </div>
           <div class="spec-item">
-            <h4>Embedded & Cloud</h4>
-            <p>RTOS Pipelines, DSP Filters, TLS Edge Security.</p>
+            <h4>Healthur Architecture</h4>
+            <p>Building full-stack instrumentation pipelines that bring raw vitals safely to life.</p>
           </div>
         </div>
       </div>
     </div>
 
-  </section>
-
-    <!-- ==================== 4. SPECIFICATIONS DASHBOARD ==================== -->
-  <section id="specs-dashboard" class="specs-section">
+    <section id="specs-dashboard" class="specs-section">
     <div class="specs-header">
       <span class="block-num">Technical Specifications</span>
       <h2>Validated Engineering Capabilities</h2>
     </div>
 
     <div class="specs-grid">
-      <!-- Tier 1: Software & Logic Architectures -->
       <div class="spec-card">
         <h3>Programming & Logic</h3>
         <ul>
@@ -132,7 +122,6 @@ import Layout from '../layouts/Layout.astro';
         </ul>
       </div>
 
-      <!-- Tier 2: Physical Layer & Microfabrication -->
       <div class="spec-card">
         <h3>Hardware & Cleanroom</h3>
         <ul>
@@ -147,7 +136,6 @@ import Layout from '../layouts/Layout.astro';
         </ul>
       </div>
 
-      <!-- Tier 3: Engineering Frameworks & Systems -->
       <div class="spec-card">
         <h3>Tools, Systems & Infrastructure</h3>
         <ul>
@@ -162,14 +150,13 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div class="gate-actions">
-      <a href="/projects" class="btn-primary">Explore Project Systems</a>
+      <a href="/projects/puppypov" class="btn-primary">View Featured Project</a>
       <a href="/experience" class="btn-secondary">View Experience Timeline</a>
     </div>
   </section>
 
 </Layout>
 
-<!-- ==================== STYLES ==================== -->
 <style>
   :root {
     --bg-color: #000000;
@@ -198,6 +185,12 @@ import Layout from '../layouts/Layout.astro';
     padding: 0 24px;
     position: relative;
     overflow: hidden;
+    
+    /* NEW: Background Image with dark fade overlay */
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.95) 90%, var(--bg-color) 100%), url('/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   .hero-container {
@@ -244,7 +237,7 @@ import Layout from '../layouts/Layout.astro';
     letter-spacing: -0.02em;
     line-height: 1.1;
     color: var(--text-primary);
-    background: linear-gradient(180deg, #ffffff 0%, #888888 100%);
+    background: linear-gradient(180deg, #ffffff 0%, #dddddd 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 24px;
@@ -297,13 +290,13 @@ import Layout from '../layouts/Layout.astro';
     font-size: 14px;
     font-weight: 500;
     border-radius: 100px;
-    border: 1px solid var(--border-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     text-decoration: none;
     transition: all 0.2s ease;
   }
   .btn-secondary:hover {
-    background-color: #1c1c1e;
-    border-color: #333336;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
   }
 
   .grid-overlay {
@@ -536,7 +529,6 @@ import Layout from '../layouts/Layout.astro';
   }
 </style>
 
-<!-- ==================== SCROLL ANIMATION SCRIPT ==================== -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const hardwareImg = document.getElementById("spinning-hardware");

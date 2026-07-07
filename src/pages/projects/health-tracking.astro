@@ -6,11 +6,10 @@ import Layout from '../../layouts/Layout.astro';
 <Layout title="Health Analytics Ecosystem | Ean Cummings">
   <article class="project-deep-dive animate-fade-in">
     
-    <!-- ==================== 1. CINEMATIC HEADER ==================== -->
     <header class="project-hero">
       <div class="project-hero-container">
         <span class="pro-tag-badge">Active Production Sprint</span>
-        <h1 class="pro-headline">Healthur Ecosystem</h1>
+        <h1 class="pro-headline">Healthur</h1>
         <p class="pro-subheading">
           A native iOS health architecture bridging high-frequency biometric streaming with on-device LLM inference to provide context-aware recovery coaching.
         </p>
@@ -18,7 +17,6 @@ import Layout from '../../layouts/Layout.astro';
       <div class="grid-overlay"></div>
     </header>
 
-    <!-- ==================== 2. ARCHITECTURE BLOCK ==================== -->
     <section class="pro-content-row">
       <div class="pro-sidebar">
         <span class="row-num">01 / Scope</span>
@@ -30,12 +28,11 @@ import Layout from '../../layouts/Layout.astro';
           Healthur is designed to solve the data-overload problem inherent in modern wearables. By leveraging <strong>Apple HealthKit</strong>, the system aggregates disparate data streams—HRV, sleep stages, resting heart rate, and training load—into a unified, user-centered Smart Health Score.
         </p>
         <p>
-          The architecture is built on a privacy-first, on-device processing model. By utilizing <strong>CoreML and iOS 26 integrated LLM frameworks</strong>, the system performs all personalized health inference locally, eliminating the need for sensitive physiological data to ever leave the user's encrypted device storage.
+          The architecture is built on a privacy-first, on-device processing model. By utilizing <strong>CoreML and iOS integrated LLM frameworks</strong>, the system performs all personalized health inference locally, eliminating the need for sensitive physiological data to ever leave the user's encrypted device storage.
         </p>
       </div>
     </section>
 
-    <!-- ==================== 3. DATA TOPOLOGY BLOCK ==================== -->
     <section class="pro-content-row">
       <div class="pro-sidebar">
         <span class="row-num">02 / Infrastructure</span>
@@ -47,7 +44,6 @@ import Layout from '../../layouts/Layout.astro';
           The system pipeline treats biometric data as a multi-signal control loop. I am currently architecting the <strong>InsightEngine</strong>, which correlates daily recovery metrics with user-logged qualitative reflections to detect patterns that simple numeric charting misses.
         </p>
         
-        <!-- Text-Based Topology Table replacing the image -->
         <div class="topology-specs-box">
           <div class="topo-row">
             <span class="topo-label">UI Layer</span>
@@ -73,7 +69,6 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
 
-    <!-- ==================== 4. TECH SPECS DASHBOARD ==================== -->
     <section class="pro-content-row border-top-only">
       <div class="pro-sidebar">
         <span class="row-num">03 / Tech Stack</span>
@@ -105,7 +100,6 @@ import Layout from '../../layouts/Layout.astro';
   </article>
 </Layout>
 
-<!-- ==================== STYLES ==================== -->
 <style>
   .project-deep-dive {
     max-width: 1024px;
@@ -114,20 +108,35 @@ import Layout from '../../layouts/Layout.astro';
     padding: 80px 0;
   }
 
-  /* --- Hero Styling --- */
+  /* --- Advanced Hero Styling Layering --- */
   .project-hero {
-    min-height: 45vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 40px;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    background-color: #000000;
+  }
+
+  /* Layers the custom assets cleanly beneath gradient masks */
+  .project-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.75) 65%, #000000 92%, #000000 100%), url('/images/health-tracking-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
   }
 
   .project-hero-container {
+    position: relative;
     z-index: 10;
+    padding: 0 4px;
   }
 
   .pro-tag-badge {
@@ -137,36 +146,41 @@ import Layout from '../../layouts/Layout.astro';
     font-weight: 600;
     letter-spacing: 0.12em;
     color: var(--accent-blue);
-    background: rgba(47, 128, 237, 0.1);
-    border: 1px solid rgba(47, 128, 237, 0.2);
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(47, 128, 237, 0.4);
     border-radius: 100px;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
 
   .pro-headline {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    margin: 0 0 16px 0;
-    color: var(--text-apple);
+    margin: 0 0 20px 0;
+    color: #ffffff;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.75), 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .pro-subheading {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    max-width: 650px;
-    font-weight: 300;
+    font-size: 1.35rem;
+    color: #e8e8ed;
+    max-width: 720px;
+    font-weight: 400;
     line-height: 1.5;
     margin: 0;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
   }
 
   .grid-overlay {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 32px 32px;
     pointer-events: none;
+    z-index: 2;
   }
 
   /* --- Row Layout Mechanics --- */
@@ -213,10 +227,10 @@ import Layout from '../../layouts/Layout.astro';
   }
 
   .pro-main-body {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-secondary);
     font-weight: 300;
-    line-height: 1.65;
+    line-height: 1.7;
   }
   .pro-main-body p {
     margin-top: 0;

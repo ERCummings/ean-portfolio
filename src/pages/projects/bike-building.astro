@@ -6,7 +6,6 @@ import Layout from '../../layouts/Layout.astro';
 <Layout title="Hardware Craft & Fabrication | Ean Cummings">
   <article class="project-deep-dive animate-fade-in">
     
-    <!-- 1. CINEMATIC HEADER -->
     <header class="project-hero">
       <div class="project-hero-container">
         <span class="pro-tag-badge">Materials Science & Structural Fabrication</span>
@@ -18,7 +17,6 @@ import Layout from '../../layouts/Layout.astro';
       <div class="grid-overlay"></div>
     </header>
 
-    <!-- 2. STEEL PROJECT -->
     <section class="pro-content-row">
       <div class="pro-sidebar">
         <span class="row-num">01 / Foundational</span>
@@ -35,7 +33,6 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
 
-    <!-- 3. TITANIUM PROJECT -->
     <section class="pro-content-row">
       <div class="pro-sidebar">
         <span class="row-num">02 / Advanced</span>
@@ -50,7 +47,6 @@ import Layout from '../../layouts/Layout.astro';
           I designed the frame from scratch in <strong>AutoCAD</strong>, optimizing the geometry for adventure-ready handling. Key modifications—stretching the chainstay length to 445 mm for climbing stability and introducing a downward bend in the downtube—were engineered to enhance frame-bag clearance and rider fit.
         </p>
 
-        <!-- Fixed Image Gallery Grid -->
         <div class="product-media-gallery">
           <div class="media-panel-box">
             <img src="/images/bike-autocad.png" alt="AutoCAD Titanium Frame Geometry Schematic" class="media-photo" />
@@ -64,7 +60,6 @@ import Layout from '../../layouts/Layout.astro';
       </div>
     </section>
 
-    <!-- 4. TECH SPECS -->
     <section class="pro-content-row border-top-only">
       <div class="pro-sidebar">
         <span class="row-num">03 / Fabrication Specs</span>
@@ -104,20 +99,35 @@ import Layout from '../../layouts/Layout.astro';
     padding: 80px 0;
   }
 
-  /* --- Hero Styling --- */
+  /* --- Advanced Hero Styling Layering --- */
   .project-hero {
-    min-height: 45vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 40px;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    background-color: #000000;
+  }
+
+  /* Layers the custom bike fabrication asset beneath gradient masks */
+  .project-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.75) 65%, #000000 92%, #000000 100%), url('/images/bike.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
   }
 
   .project-hero-container {
+    position: relative;
     z-index: 10;
+    padding: 0 4px;
   }
 
   .pro-tag-badge {
@@ -127,36 +137,41 @@ import Layout from '../../layouts/Layout.astro';
     font-weight: 600;
     letter-spacing: 0.12em;
     color: var(--accent-blue);
-    background: rgba(47, 128, 237, 0.1);
-    border: 1px solid rgba(47, 128, 237, 0.2);
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(47, 128, 237, 0.4);
     border-radius: 100px;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
 
   .pro-headline {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    margin: 0 0 16px 0;
-    color: var(--text-apple);
+    margin: 0 0 20px 0;
+    color: #ffffff;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.75), 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .pro-subheading {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    max-width: 650px;
-    font-weight: 300;
+    font-size: 1.35rem;
+    color: #e8e8ed;
+    max-width: 720px;
+    font-weight: 400;
     line-height: 1.5;
     margin: 0;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
   }
 
   .grid-overlay {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 32px 32px;
     pointer-events: none;
+    z-index: 2;
   }
 
   /* --- Row Layout Mechanics --- */
@@ -203,17 +218,16 @@ import Layout from '../../layouts/Layout.astro';
   }
 
   .pro-main-body {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-secondary);
     font-weight: 300;
-    line-height: 1.65;
+    line-height: 1.7;
   }
   .pro-main-body p {
     margin-top: 0;
     margin-bottom: 20px;
   }
 
-  /* --- Upgraded Dual Photo Showcase Grid --- */
   .product-media-gallery {
     display: grid;
     grid-template-columns: 1fr;
@@ -258,7 +272,6 @@ import Layout from '../../layouts/Layout.astro';
     line-height: 1.4;
   }
 
-  /* --- Technical Spec Breakdown --- */
   .specs-mini-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

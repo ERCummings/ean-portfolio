@@ -132,20 +132,35 @@ import Layout from '../../layouts/Layout.astro';
     padding: 80px 0;
   }
 
-  /* --- Hero Styling --- */
+  /* --- Advanced Hero Styling Layering --- */
   .project-hero {
-    min-height: 45vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
     overflow: hidden;
-    border-bottom: 1px solid var(--border-color);
-    padding-bottom: 40px;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    background-color: #000000;
+  }
+
+  /* Using a pseudo-element layers the photo cleanly beneath grid mask */
+  .project-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.75) 65%, #000000 92%, #000000 100%), url('/images/puppypov-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
   }
 
   .project-hero-container {
+    position: relative;
     z-index: 10;
+    padding: 0 4px;
   }
 
   .pro-tag-badge {
@@ -155,36 +170,41 @@ import Layout from '../../layouts/Layout.astro';
     font-weight: 600;
     letter-spacing: 0.12em;
     color: var(--accent-blue);
-    background: rgba(47, 128, 237, 0.1);
-    border: 1px solid rgba(47, 128, 237, 0.2);
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(47, 128, 237, 0.4);
     border-radius: 100px;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
   }
 
   .pro-headline {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 700;
     letter-spacing: -0.02em;
-    margin: 0 0 16px 0;
-    color: var(--text-apple);
+    margin: 0 0 20px 0;
+    color: #ffffff;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.75), 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .pro-subheading {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    max-width: 650px;
-    font-weight: 300;
+    font-size: 1.35rem;
+    color: #e8e8ed;
+    max-width: 720px;
+    font-weight: 400;
     line-height: 1.5;
     margin: 0;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
   }
 
   .grid-overlay {
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     background-size: 32px 32px;
     pointer-events: none;
+    z-index: 2;
   }
 
   /* --- Row Layout Mechanics --- */
@@ -231,10 +251,10 @@ import Layout from '../../layouts/Layout.astro';
   }
 
   .pro-main-body {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-secondary);
     font-weight: 300;
-    line-height: 1.65;
+    line-height: 1.7;
   }
   .pro-main-body p {
     margin-top: 0;
@@ -268,10 +288,9 @@ import Layout from '../../layouts/Layout.astro';
 
   .media-photo {
     width: 100%;
-    /* Forces images to stay constrained and uniform */
     max-height: 240px; 
     object-fit: cover; 
-    object-position: top center; /* Keeps web mockups anchored at the top */
+    object-position: top center; 
     border-radius: 8px;
     display: block;
   }
@@ -299,14 +318,13 @@ import Layout from '../../layouts/Layout.astro';
     box-shadow: 0 30px 60px rgba(0,0,0,0.6);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers the diagram */
+    align-items: center;
   }
 
   .diagram-photo {
     width: 100%;
-    /* Prevents the diagram from becoming a massive poster on big screens */
     max-height: 450px; 
-    object-fit: contain; /* Ensures the whole diagram stays visible without cropping */
+    object-fit: contain; 
     display: block;
   }
 
@@ -319,7 +337,7 @@ import Layout from '../../layouts/Layout.astro';
 
   .topo-row {
     display: flex;
-    justify-content: space-between;
+    justify-space: space-between;
     align-items: center;
     padding: 14px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.02);

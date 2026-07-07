@@ -1,7 +1,9 @@
 ---
 // src/layouts/Layout.astro
+import Analytics from '@vercel/analytics/astro';
+
 interface Props {
-	title: string;
+    title: string;
 }
 
 const { title } = Astro.props;
@@ -9,325 +11,327 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>{title}</title>
-		<meta name="description" content="Portfolio and professional profile of Ean Cummings, Biomedical & Electrical Engineer & Entrepreneur." />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	</head>
-	<body class="site-body">
-		
-		<!-- Apple-Style Global Nav -->
-		<header class="global-header" id="main-nav">
-			<div class="nav-container">
-				<a href="/" class="nav-logo">Ean Cummings</a>
-				
-				<nav class="nav-links">
-					<a href="/#story" class="nav-item">My Story</a>
-					
-					<!-- Interactive Projects Dropdown Container -->
-					<div class="dropdown-wrapper">
-						<button class="nav-item dropdown-trigger" aria-haspopup="true">
-							Projects
-							<svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
-							</svg>
-						</button>
-						
-						<!-- Dropdown Panel Box -->
-						<div class="dropdown-panel">
-							<div class="dropdown-grid">
-								<a href="/projects/puppypov" class="dropdown-link">
-									<span class="link-title">PuppyPOV</span>
-									<span class="link-desc">Wearable IoT Pet Health Monitor & DSP Pipeline</span>
-								</a>
-								<a href="/projects/insultrack" class="dropdown-link">
-									<span class="link-title">InsulTrack</span>
-									<span class="link-desc">Smart Insulin Pen Case & iOS Ecosystem</span>
-								</a>
-								<a href="/projects/capsule-closet" class="dropdown-link">
-									<span class="link-title">Capsule Closet</span>
-									<span class="link-desc">Generative-AI Wardrobe Web Application</span>
-								</a>
-								<a href="/projects/power-systems" class="dropdown-link">
-									<span class="link-title">Power Systems</span>
-									<span class="link-desc">Grid Analysis & Simulation Infrastructures</span>
-								</a>
-								<a href="/projects/health-tracking" class="dropdown-link">
-									<span class="link-title">Health App</span>
-									<span class="link-desc">Healthur: Adaptive Vitals Architecture</span>
-								</a>
-								<a href="/projects/bike-building" class="dropdown-link">
-									<span class="link-title">Bike Building</span>
-									<span class="link-desc">Steel & Titanium Cycles </span>
-								</a>
-                <a href="/projects/biomed-instrumentation" class="dropdown-link">
-                  <span class="link-title">Biomed Instrumentation</span>
-                  <span class="link-desc">Cardiac Signal Acquisition & Analysis</span>
-                 </a>
-							</div>
-						</div>
-					</div>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{title}</title>
+        <meta name="description" content="Portfolio and professional profile of Ean Cummings, Biomedical & Electrical Engineer & Entrepreneur." />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    </head>
+    <body class="site-body">
+        
+        <!-- Apple-Style Global Nav -->
+        <header class="global-header" id="main-nav">
+            <div class="nav-container">
+                <a href="/" class="nav-logo">Ean Cummings</a>
+                
+                <nav class="nav-links">
+                    <a href="/#story" class="nav-item">My Story</a>
+                    
+                    <!-- Interactive Projects Dropdown Container -->
+                    <div class="dropdown-wrapper">
+                        <button class="nav-item dropdown-trigger" aria-haspopup="true">
+                            Projects
+                            <svg class="dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        
+                        <!-- Dropdown Panel Box -->
+                        <div class="dropdown-panel">
+                            <div class="dropdown-grid">
+                                <a href="/projects/puppypov" class="dropdown-link">
+                                    <span class="link-title">PuppyPOV</span>
+                                    <span class="link-desc">Wearable IoT Pet Health Monitor & DSP Pipeline</span>
+                                </a>
+                                <a href="/projects/insultrack" class="dropdown-link">
+                                    <span class="link-title">InsulTrack</span>
+                                    <span class="link-desc">Smart Insulin Pen Case & iOS Ecosystem</span>
+                                </a>
+                                <a href="/projects/capsule-closet" class="dropdown-link">
+                                    <span class="link-title">Capsule Closet</span>
+                                    <span class="link-desc">Generative-AI Wardrobe Web Application</span>
+                                </a>
+                                <a href="/projects/power-systems" class="dropdown-link">
+                                    <span class="link-title">Power Systems</span>
+                                    <span class="link-desc">Grid Analysis & Simulation Infrastructures</span>
+                                </a>
+                                <a href="/projects/health-tracking" class="dropdown-link">
+                                    <span class="link-title">Health App</span>
+                                    <span class="link-desc">Healthur: Adaptive Vitals Architecture</span>
+                                </a>
+                                <a href="/projects/bike-building" class="dropdown-link">
+                                    <span class="link-title">Bike Building</span>
+                                    <span class="link-desc">Steel & Titanium Cycles </span>
+                                </a>
+                                <a href="/projects/biomed-instrumentation" class="dropdown-link">
+                                  <span class="link-title">Biomed Instrumentation</span>
+                                  <span class="link-desc">Cardiac Signal Acquisition & Analysis</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-					<a href="/experience" class="nav-item">Experience</a>
-					<a href="mailto:ean.cummings@icloud.com" class="btn-nav-cta">Contact</a>
-				</nav>
-			</div>
-		</header>
+                    <a href="/experience" class="nav-item">Experience</a>
+                    <a href="mailto:ean.cummings@icloud.com" class="btn-nav-cta">Contact</a>
+                </nav>
+            </div>
+        </header>
 
-		<main class="main-content">
-			<slot />
-		</main>
+        <main class="main-content">
+            <slot />
+        </main>
 
-		<!-- Minimal Footer -->
-		<footer class="global-footer">
-			<div class="footer-container">
-				<p>&copy; 2026 Ean Cummings. Engineered with Astro.</p>
-			</div>
-		</footer>
+        <!-- Minimal Footer -->
+        <footer class="global-footer">
+            <div class="footer-container">
+                <p>&copy; 2026 Ean Cummings. Engineered with Astro.</p>
+            </div>
+        </footer>
 
-	</body>
+        <!-- Vercel Analytics Component -->
+        <Analytics />
+    </body>
 </html>
 
 <!-- ==================== GLOBAL STYLES ==================== -->
 <style is:global>
-	:root {
-		/* Core Theme Colors */
-		--bg-black: #000000;
-		--nav-bg: rgba(0, 0, 0, 0.75);
-		--panel-bg: rgba(28, 28, 30, 0.92);
-		--border-light: rgba(255, 255, 255, 0.08);
-		--text-apple: #f5f5f7;
-		--text-gray-apple: #a1a1a6;
-		
-		/* Legacy Fallback Variables (Kept for compatibility with other pages) */
-		--bg: #000000;
-		--bg-soft: #111317;
-		--card: #141823;
-		--text: #f5f5f7;
-		--muted: #a1a1a6;
-		--acc: #2f80ed;
-		--acc-2: #34c759;
-		--border: rgba(255,255,255,0.08);
-		--shadow: 0 10px 30px rgba(0,0,0,.35);
-	}
+    :root {
+        /* Core Theme Colors */
+        --bg-black: #000000;
+        --nav-bg: rgba(0, 0, 0, 0.75);
+        --panel-bg: rgba(28, 28, 30, 0.92);
+        --border-light: rgba(255, 255, 255, 0.08);
+        --text-apple: #f5f5f7;
+        --text-gray-apple: #a1a1a6;
+        
+        /* Legacy Fallback Variables (Kept for compatibility with other pages) */
+        --bg: #000000;
+        --bg-soft: #111317;
+        --card: #141823;
+        --text: #f5f5f7;
+        --muted: #a1a1a6;
+        --acc: #2f80ed;
+        --acc-2: #34c759;
+        --border: rgba(255,255,255,0.08);
+        --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
 
-	* { box-sizing: border-box; }
+    * { box-sizing: border-box; }
 
-	html {
-		scroll-behavior: smooth;
-		background-color: var(--bg-black);
-	}
+    html {
+        scroll-behavior: smooth;
+        background-color: var(--bg-black);
+    }
 
-	.site-body {
-		margin: 0;
-		padding: 0;
-		background-color: var(--bg-black);
-		color: var(--text-apple);
-		font-family: 'Inter', system-ui, -apple-system, sans-serif;
-		-webkit-font-smoothing: antialiased;
-	}
+    .site-body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--bg-black);
+        color: var(--text-apple);
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        -webkit-font-smoothing: antialiased;
+    }
 
-	/* --- Sticky Blurred Navigation Bar --- */
-	.global-header {
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 100;
-		border-bottom: 1px solid transparent;
-		background-color: transparent;
-		backdrop-filter: blur(0px);
-		-webkit-backdrop-filter: blur(0px);
-		transition: background-color 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
-	}
+    /* --- Sticky Blurred Navigation Bar --- */
+    .global-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        border-bottom: 1px solid transparent;
+        background-color: transparent;
+        backdrop-filter: blur(0px);
+        -webkit-backdrop-filter: blur(0px);
+        transition: background-color 0.4s ease, border-color 0.4s ease, backdrop-filter 0.4s ease;
+    }
 
-	/* JavaScript handles toggling this state dynamically on scroll */
-	.global-header.scrolled {
-		background-color: var(--nav-bg);
-		border-bottom-color: var(--border-light);
-		backdrop-filter: blur(20px);
-		-webkit-backdrop-filter: blur(20px);
-	}
+    /* JavaScript handles toggling this state dynamically on scroll */
+    .global-header.scrolled {
+        background-color: var(--nav-bg);
+        border-bottom-color: var(--border-light);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
 
-	.nav-container {
-		width: min(1024px, 92%);
-		margin: 0 auto;
-		height: 48px;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+    .nav-container {
+        width: min(1024px, 92%);
+        margin: 0 auto;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-	.nav-logo {
-		font-size: 14px;
-		font-weight: 500;
-		color: var(--text-apple);
-		text-decoration: none;
-		letter-spacing: -0.01em;
-		opacity: 0.9;
-		transition: opacity 0.2s ease;
-	}
-	.nav-logo:hover { opacity: 1; }
+    .nav-logo {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-apple);
+        text-decoration: none;
+        letter-spacing: -0.01em;
+        opacity: 0.9;
+        transition: opacity 0.2s ease;
+    }
+    .nav-logo:hover { opacity: 1; }
 
-	.nav-links {
-		display: flex;
-		align-items: center;
-		gap: 28px;
-	}
+    .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+    }
 
-	.nav-item {
-		background: none;
-		border: none;
-		font-size: 12px;
-		font-weight: 400;
-		color: var(--text-gray-apple);
-		text-decoration: none;
-		cursor: pointer;
-		padding: 0;
-		display: inline-flex;
-		align-items: center;
-		gap: 4px;
-		transition: color 0.2s ease;
-	}
-	.nav-item:hover { color: var(--text-apple); }
+    .nav-item {
+        background: none;
+        border: none;
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--text-gray-apple);
+        text-decoration: none;
+        cursor: pointer;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: color 0.2s ease;
+    }
+    .nav-item:hover { color: var(--text-apple); }
 
-	.dropdown-chevron {
-		width: 8px;
-		height: 8px;
-		opacity: 0.5;
-		transition: transform 0.2s ease;
-	}
+    .dropdown-chevron {
+        width: 8px;
+        height: 8px;
+        opacity: 0.5;
+        transition: transform 0.2s ease;
+    }
 
-	/* --- Dropdown Container Architecture --- */
-	.dropdown-wrapper {
-		position: relative;
-		padding: 14px 0; 
-	}
+    /* --- Dropdown Container Architecture --- */
+    .dropdown-wrapper {
+        position: relative;
+        padding: 14px 0; 
+    }
 
-	.dropdown-panel {
-		position: absolute;
-		top: 100%;
-		right: -100px; /* Centers the dropdown better on desktop */
-		width: 480px;
-		background: var(--panel-bg);
-		border: 1px solid var(--border-light);
-		border-radius: 18px;
-		padding: 12px;
-		box-shadow: 0 30px 60px rgba(0,0,0,0.8);
-		backdrop-filter: blur(30px);
-		-webkit-backdrop-filter: blur(30px);
-		
-		/* State management transitions */
-		opacity: 0;
-		transform: translateY(6px) scale(0.98);
-		pointer-events: none;
-		transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-		transform-origin: top center;
-	}
+    .dropdown-panel {
+        position: absolute;
+        top: 100%;
+        right: -100px; /* Centers the dropdown better on desktop */
+        width: 480px;
+        background: var(--panel-bg);
+        border: 1px solid var(--border-light);
+        border-radius: 18px;
+        padding: 12px;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.8);
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+        
+        /* State management transitions */
+        opacity: 0;
+        transform: translateY(6px) scale(0.98);
+        pointer-events: none;
+        transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        transform-origin: top center;
+    }
 
-	/* Trigger Reveal Conditions */
-	.dropdown-wrapper:hover .dropdown-panel {
-		opacity: 1;
-		transform: translateY(0) scale(1);
-		pointer-events: auto;
-	}
+    /* Trigger Reveal Conditions */
+    .dropdown-wrapper:hover .dropdown-panel {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+    }
 
-	.dropdown-wrapper:hover .dropdown-chevron {
-		transform: rotate(180deg);
-		opacity: 0.9;
-	}
+    .dropdown-wrapper:hover .dropdown-chevron {
+        transform: rotate(180deg);
+        opacity: 0.9;
+    }
 
-	/* Two-column layout inside the panel box */
-	.dropdown-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 4px;
-	}
+    /* Two-column layout inside the panel box */
+    .dropdown-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4px;
+    }
 
-	.dropdown-link {
-		display: flex;
-		flex-direction: column;
-		padding: 12px 14px;
-		border-radius: 12px;
-		text-decoration: none;
-		transition: background-color 0.15s ease;
-	}
-	.dropdown-link:hover {
-		background-color: rgba(255, 255, 255, 0.04);
-	}
+    .dropdown-link {
+        display: flex;
+        flex-direction: column;
+        padding: 12px 14px;
+        border-radius: 12px;
+        text-decoration: none;
+        transition: background-color 0.15s ease;
+    }
+    .dropdown-link:hover {
+        background-color: rgba(255, 255, 255, 0.04);
+    }
 
-	.link-title {
-		font-size: 13px;
-		font-weight: 500;
-		color: var(--text-apple);
-		margin-bottom: 3px;
-	}
+    .link-title {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--text-apple);
+        margin-bottom: 3px;
+    }
 
-	.link-desc {
-		font-size: 11px;
-		color: var(--text-gray-apple);
-		font-weight: 300;
-		line-height: 1.3;
-	}
+    .link-desc {
+        font-size: 11px;
+        color: var(--text-gray-apple);
+        font-weight: 300;
+        line-height: 1.3;
+    }
 
-	/* Button Style Action Link */
-	.btn-nav-cta {
-		font-size: 11px;
-		font-weight: 500;
-		background-color: var(--text-apple);
-		color: var(--bg-black);
-		padding: 6px 14px;
-		border-radius: 100px;
-		text-decoration: none;
-		transition: background-color 0.2s ease;
-	}
-	.btn-nav-cta:hover { background-color: #e8e8ed; }
+    /* Button Style Action Link */
+    .btn-nav-cta {
+        font-size: 11px;
+        font-weight: 500;
+        background-color: var(--text-apple);
+        color: var(--bg-black);
+        padding: 6px 14px;
+        border-radius: 100px;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+    .btn-nav-cta:hover { background-color: #e8e8ed; }
 
-	.main-content {
-		/* Removed aggressive padding to let hero sections hit the top */
-		min-height: 100vh;
-	}
+    .main-content {
+        /* Removed aggressive padding to let hero sections hit the top */
+        min-height: 100vh;
+    }
 
-	.global-footer {
-		text-align: center;
-		padding: 40px 24px;
-		border-top: 1px solid var(--border-light);
-		font-size: 12px;
-		color: var(--text-gray-apple);
-		font-weight: 300;
-	}
-	
-	.footer-container {
-		width: min(1024px, 92%);
-		margin: 0 auto;
-	}
+    .global-footer {
+        text-align: center;
+        padding: 40px 24px;
+        border-top: 1px solid var(--border-light);
+        font-size: 12px;
+        color: var(--text-gray-apple);
+        font-weight: 300;
+    }
+    
+    .footer-container {
+        width: min(1024px, 92%);
+        margin: 0 auto;
+    }
 </style>
 
 <!-- ==================== HEADER POSITION SCRIPT ==================== -->
 <script>
-	document.addEventListener("DOMContentLoaded", () => {
-		const mainNav = document.getElementById("main-nav");
-		
-		if (mainNav) {
-			window.addEventListener("scroll", () => {
-				if (window.scrollY > 20) {
-					mainNav.classList.add("scrolled");
-				} else {
-					mainNav.classList.remove("scrolled"); 
-				}
-			});
-			
-			if (window.scrollY > 20) {
-				mainNav.classList.add("scrolled");
-			} else {
-				mainNav.classList.remove("scrolled");
-			}
-		}
-	});
-</script> 
+    document.addEventListener("DOMContentLoaded", () => {
+        const mainNav = document.getElementById("main-nav");
+        
+        if (mainNav) {
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 20) {
+                    mainNav.classList.add("scrolled");
+                } else {
+                    mainNav.classList.remove("scrolled"); 
+                }
+            });
+            
+            if (window.scrollY > 20) {
+                mainNav.classList.add("scrolled");
+            } else {
+                mainNav.classList.remove("scrolled");
+            }
+        }
+    });
+</script>
